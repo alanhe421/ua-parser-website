@@ -10,7 +10,7 @@
     <meta name="description" content="UAParser.js is the most comprehensive, compact, & up-to-date isomorphic JavaScript library to detect visitor's Browser, Engine, OS, CPU, and Device type/model.">
     <meta name="application-name" content="UAParser.js">
     <meta property="og:title" content="UAParser.js">
-    <meta property="og:url" content="https://uaparser.dev/">
+    <meta property="og:url" content="https://alanhe421.github.io/ua-parser-js">
     <meta property="og:image" content="https://uaparser.dev/images/uap-header.png">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Abstract away the hassle of user-agent detection">
@@ -27,17 +27,11 @@
     <script src="js/ua-parser.js"></script>
     <script src="js/ua-list-example.js"></script>
     <script src="js/script.js"></script>
-    <script defer src="https://app.tinyanalytics.io/pixel/9nNpPJDLeUns0LD3"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
 </head>
-
 <body>
     <div class="pusher">
         <div class="ui inverted instagram vertical masthead center aligned segment">
-            <h3>
-                What is my <a href="#ua-txt-info"><span class="ui black huge label">User-Agent</span></a>
-            </h3>
             <div class="ui text container">
                     <a href="https://uaparser.dev"><h1>UAParser.js</h1></a>
                     <h2>Abstracts Away The Hassle of User-Agent Detection</h2>
@@ -316,7 +310,7 @@ console.log(device.is('mobile'));   // true
 console.log(device.vendor);         // Nokia
 console.log(device.model);          // N900
 </code></pre>
-                        
+
                         <a href="https://docs.uaparser.dev/intro/quick-start/using-es-modules-typescript.html" class="ui large violet button"><i class="external alternate icon"></i>READ THE DOCS</a>
                     </div>
                 </div>
@@ -328,13 +322,13 @@ console.log(device.model);          // N900
 
 <pre><code class="language-js">&lt;script src="ua-parser.min.js"&gt;&lt;/script&gt;
 </code></pre>
-                        <p>Alternatively, you can use a CDN like <a href="https://cdn.jsdelivr.net/npm/ua-parser-js/src/ua-parser.min.js">jsDelivr</a> or <a href="https://cdnjs.com/libraries/UAParser.js">cdnjs</a> in your script tag:</p>                       
+                        <p>Alternatively, you can use a CDN like <a href="https://cdn.jsdelivr.net/npm/ua-parser-js/src/ua-parser.min.js">jsDelivr</a> or <a href="https://cdnjs.com/libraries/UAParser.js">cdnjs</a> in your script tag:</p>
 
 <pre><code class="language-js">&lt;script src="https://cdn.jsdelivr.net/npm/ua-parser-js/dist/ua-parser.min.js">&lt;/script>
 </code></pre>
 
 <p>Then, use the library in your HTML page:</p>
-                        
+
 <pre><code class="language-html">
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -413,12 +407,12 @@ console.log(uap.getBrowser().name); // "Safari"
                         <p>In a server-side environment like Node.js, UAParser.js can parse the <code>[User-Agent]</code> and <code>[Sec-CH-UA-*]</code> headers from the incoming HTTP requests. </p>
 
                         <p>To get started, install UAParser.js using npm:</p>
-                        
+
 <pre><code>$ npm install ua-parser-js
 </code></pre>
-                        
+
                         <p>Then, require the library in your Node.js application:</p>
-                        
+
 <pre><code class="language-js">const http = require('http');
 const uap = require('ua-parser-js');
 
@@ -426,7 +420,7 @@ http.createServer(function (req, res) {
     // get user-agent header
     let ua = uap(req.headers['user-agent']);
 
-    /* 
+    /*
     // Since v2.0.0
     // you can also pass Client Hints data to UAParser
     // note: only works in a secure context (localhost or https://)
@@ -436,7 +430,7 @@ http.createServer(function (req, res) {
         const getHighEntropyValues = 'Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA-Arch, Sec-CH-UA-Bitness';
         res.setHeader('Accept-CH', getHighEntropyValues);
         res.setHeader('Critical-CH', getHighEntropyValues);
-        
+
         ua = uap(req.headers).withClientHints();
     */
 
@@ -457,9 +451,9 @@ console.log('Server running at http://127.0.0.1:1337/');
                         <p>Although written in vanilla JavaScript, UAParser.js automatically detects the presence of <code>jQuery</code> (or <code>Zepto</code>) and creates a <code>$.ua</code> object in addition to the <code>window.UAParser</code> constructor.</p>
 
                         <h4>Properties</h4>
-                        
+
                         <p>The result of detected user-agent</p>
-                        
+
                         <ul>
                             <li><code>$.ua.browser</code></li>
                             <li><code>$.ua.cpu</code></li>
@@ -467,18 +461,18 @@ console.log('Server running at http://127.0.0.1:1337/');
                             <li><code>$.ua.engine</code></li>
                             <li><code>$.ua.os</code></li>
                         </ul>
-                        
+
                         <h4>Methods</h4>
-                        
+
                         <p>To get or set the user-agent</p>
-                        
+
                         <ul>
                             <li><code>$.ua.get()</code></li>
                             <li><code>$.ua.set(ua)</code></li>
                         </ul>
-                        
+
                         <h4>Code Example:</h4>
-                        
+
 <pre><code>// Say we are in a browser where jQuery is present
 // with user-agent: "Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; Sprint APA7373KT Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0"
 
@@ -506,9 +500,9 @@ console.log($.ua.browser.major);    // "4"
 // &lt;body class="ua-browser-safari ua-devicetype-tablet"&gt;
 $('body')
     .addClass(
-        'ua-browser-' + 
-        $.ua.browser.name + 
-        ' ua-devicetype-' + 
+        'ua-browser-' +
+        $.ua.browser.name +
+        ' ua-devicetype-' +
         $.ua.device.type);
 </code></pre>
 
