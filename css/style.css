@@ -10,14 +10,14 @@ strong.subtle{
 }
 .hljs-punctuation, .hljs-tag {
 color: rgba(255, 255, 255, 0.3);
-}  
+}
 .ui.horizontal.divider {
     margin: 3rem 0 2rem;
 }
 .hidden.menu {
     display: none;
 }
-.masthead a h1 {
+.masthead h1 {
     color: #fff;
     font-weight: bold;
     font-size: 5rem;
