@@ -102,7 +102,7 @@ $(document)
             });
         });
     }
-    
+
     var qs;
     if (URLSearchParams) {
         qs = new URLSearchParams(window.location.search).get('ua');
@@ -159,7 +159,16 @@ $(document)
 
     var clipboard = new ClipboardJS('#btn-clipboard');
     clipboard.on('success', function(e) {
-        $('.mini.modal').modal('setting', 'transition', 'vertical flip').modal('show');
+        Toastify({
+            text: "Copied",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            onClick: function(){} // Callback after click
+        }).showToast();
         e.clearSelection();
     });
     hljs.highlightAll();
